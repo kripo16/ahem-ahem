@@ -58,7 +58,7 @@ body {
 }
 
 .four .text-box {
-  width: 200px;
+  max-width: 100%;
   margin: 0 auto;
   border: 3px solid #aaa;
   border-radius: 5px;
