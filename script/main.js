@@ -15,9 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.style.height = '100%'; // Ensure body covers full viewport height
     const container = document.querySelector('.container');
     container.style.display = 'none'; // Or 'flex' if it's a flexbox container
-    while (true){
-      
-    }
+    return;
   }
 });
 
