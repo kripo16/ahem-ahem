@@ -304,10 +304,11 @@ body {
 
 footer {
     position: fixed;
-    bottom: 10px; /* Adjust as needed */
+    bottom: 30px; /* Adjust as needed */
     right: 10px; /* Adjust as needed */
     text-align: right;
     font-size: 14px;
     color: #666; /* Adjust color as needed */
 }
+
 
