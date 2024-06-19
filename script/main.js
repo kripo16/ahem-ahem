@@ -1,3 +1,24 @@
+document.getElementById("fullscreen-btn").addEventListener("click", function() {
+  // Request fullscreen
+  if (document.documentElement.requestFullscreen) {
+    document.documentElement.requestFullscreen();
+  } else if (document.documentElement.mozRequestFullScreen) { // Firefox
+    document.documentElement.mozRequestFullScreen();
+  } else if (document.documentElement.webkitRequestFullscreen) { // Chrome, Safari and Opera
+    document.documentElement.webkitRequestFullscreen();
+  } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
+    document.documentElement.msRequestFullscreen();
+  }
+
+  // Hide the button and show the container
+  document.getElementById("fullscreen-btn").style.display = "none";
+  document.querySelector(".container").style.display = "block";
+
+  // Fetch data and start the animation
+  fetchData();
+});
+
+
 // Import the data to customize and insert them into page
 const fetchData = () => {
   fetch("customize.json")
