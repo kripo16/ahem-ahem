@@ -2,132 +2,132 @@ document.addEventListener('DOMContentLoaded', function() {
   var currentDate = new Date();
   var targetDate = new Date('2024-06-20'); // Target date: June 20, 2024
 
-  // Check if the current date is after the target date
-  if (currentDate.setHours(0, 0, 0, 0) > targetDate.setHours(0, 0, 0, 0)) {
-    // Current date is past the target date, stop animations
+  // Check if the current date is the target date
+  if (currentDate.toDateString() !== targetDate.toDateString()) {
+    // Not the target date, change background or display a message
     document.body.style.backgroundImage = 'url("img/bg.png")'; // Replace with your image URL
     document.body.style.backgroundSize = 'cover';
     document.body.style.backgroundPosition = 'center';
     document.body.style.backgroundRepeat = 'no-repeat';
     document.body.style.height = '100%'; // Ensure body covers full viewport height
-  } else {
-
-    alert("Click OK then press F11 !!")
-    let audio = document.getElementById('myaudio');
-    audio.play()
-    // Import the data to customize and insert them into page
-    const fetchData = () => {
-      fetch("customize.json")
-        .then(data => data.json())
-        .then(data => {
-          dataArr = Object.keys(data);
-          dataArr.map(customData => {
-            if (data[customData] !== "") {
-              if (customData === "imagePath") {
-                document
-                  .querySelector(`[data-node-name*="${customData}"]`)
-                  .setAttribute("src", data[customData]);
-              } else {
-                document.querySelector(`[data-node-name*="${customData}"]`).innerText = data[customData];
-              }
-            }
+  }
+});
+alert("Click OK then press F11 !!")
+let audio = document.getElementById('myaudio');
+audio.play()
+// Import the data to customize and insert them into page
+const fetchData = () => {
+  fetch("customize.json")
+    .then(data => data.json())
+    .then(data => {
+      dataArr = Object.keys(data);
+      dataArr.map(customData => {
+        if (data[customData] !== "") {
+          if (customData === "imagePath") {
+            document
+              .querySelector(`[data-node-name*="${customData}"]`)
+              .setAttribute("src", data[customData]);
+          } else {
+            document.querySelector(`[data-node-name*="${customData}"]`).innerText = data[customData];
+          }
+        }
     
-            // Check if the iteration is over
-            // Run amimation if so
-            if ( dataArr.length === dataArr.indexOf(customData) + 1 ) {
-              animationTimeline();
-            } 
-          });
-        });
-    };
+        // Check if the iteration is over
+         // Run amimation if so
+        if ( dataArr.length === dataArr.indexOf(customData) + 1 ) {
+          animationTimeline();
+        } 
+      });
+    });
+};
     
-    // Animation Timeline
-    const animationTimeline = () => {
-      // Spit chars that needs to be animated individually
-      const textBoxChars = document.getElementsByClassName("hbd-chatbox")[0];
-      const hbd = document.getElementsByClassName("wish-hbd")[0];
+// Animation Timeline
+const animationTimeline = () => {
+  // Spit chars that needs to be animated individually
+  const textBoxChars = document.getElementsByClassName("hbd-chatbox")[0];
+  const hbd = document.getElementsByClassName("wish-hbd")[0];
     
-      textBoxChars.innerHTML = `<span>${textBoxChars.innerHTML
-        .split("")
-        .join("</span><span>")}</span`;
+  textBoxChars.innerHTML = `<span>${textBoxChars.innerHTML
+    .split("")
+    .join("</span><span>")}</span`;
     
-      hbd.innerHTML = `<span>${hbd.innerHTML
-        .split("")
-        .join("</span><span>")}</span`;
+  hbd.innerHTML = `<span>${hbd.innerHTML
+    .split("")
+    .join("</span><span>")}</span`;
     
-      const ideaTextTrans = {
+  const ideaTextTrans = {
+    opacity: 0,
+    y: -20,
+    rotationX: 5,
+    skewX: "15deg"
+  };
+    
+  const ideaTextTransLeave = {
+    opacity: 0,
+    y: 20,
+    rotationY: 5,
+    skewX: "-15deg"
+  };
+    
+  const tl = new TimelineMax();
+    
+  tl
+    .to(".container", 0.1, {
+      visibility: "visible"
+    })
+    .from(".one", 0.7, {
+      opacity: 0,
+      y: 10
+    })
+    .from(".two", 0.4, {
+      opacity: 0,
+      y: 10
+    })
+    .to(
+      ".one",
+      0.7,
+      {
         opacity: 0,
-        y: -20,
-        rotationX: 5,
-        skewX: "15deg"
-      };
-    
-      const ideaTextTransLeave = {
+        y: 10
+      },
+      "+=2.5"
+    )
+    .to(
+      ".two",
+      1,
+      {
         opacity: 0,
-        y: 20,
-        rotationY: 5,
-        skewX: "-15deg"
-      };
-    
-      const tl = new TimelineMax();
-    
-      tl
-        .to(".container", 0.1, {
-          visibility: "visible"
-        })
-        .from(".one", 0.7, {
-          opacity: 0,
-          y: 10
-        })
-        .from(".two", 0.4, {
-          opacity: 0,
-          y: 10
-        })
-        .to(
-          ".one",
-          0.7,
-          {
-            opacity: 0,
-            y: 10
-          },
-          "+=2.5"
-        )
-        .to(
-          ".two",
-          1,
-          {
-            opacity: 0,
-            y: 10
-          },
-          "-=1"
-        )
-        .from(".three", 0.7, {
-          opacity: 0,
-          y: 10
-          // scale: 0.7
-        })
-        .to(
-          ".three",
-          0.7,
-          {
-            opacity: 0,
-            y: 10
-          },
-          "+=2"
-        )
-        .from(".four", 0.7, {
-          scale: 0.2,
-          opacity: 0
-        })
-        .from(".fake-btn", 0.3, {
-          scale: 0.2,
-          opacity: 0
-        })
-        .staggerTo(
-          ".hbd-chatbox span",
-          0.5,
-          {
-            visibility: "visible"
+        y: 10
+      },
+      "-=1"
+    )
+    .from(".three", 0.7, {
+      opacity: 0,
+      y: 10
+      // scale: 0.7
+    })
+    .to(
+      ".three",
+      0.7,
+      {
+        opacity: 0,
+        y: 10
+      },
+      "+=2"
+    )
+    .from(".four", 0.7, {
+      scale: 0.2,
+      opacity: 0
+    })
+    .from(".fake-btn", 0.3, {
+      scale: 0.2,
+      opacity: 0
+    })
+    .staggerTo(
+      ".hbd-chatbox span",
+      0.5,
+      {
+        visibility: "visible"
           },
           0.05
         )
