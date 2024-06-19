@@ -1,5 +1,5 @@
 
-
+let x = 1
 
 document.addEventListener('DOMContentLoaded', function() {
   var currentDate = new Date();
@@ -15,14 +15,17 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.style.height = '100%'; // Ensure body covers full viewport height
     const container = document.querySelector('.container');
     container.style.display = 'none'; // Or 'flex' if it's a flexbox container
+    x = 2
     return;
   }
 });
 
+if (x === 1) {
+  alert("ِClick OK then press F11 in the KEYBOARD !!")
+  let audio = document.getElementById('myaudio');
+  audio.play()
+}
 
-alert("ِClick OK then press F11 in the KEYBOARD !!")
-let audio = document.getElementById('myaudio');
-audio.play()
 
 // Import the data to customize and insert them into page
 const fetchData = () => {
