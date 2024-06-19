@@ -1,16 +1,20 @@
-document.getElementById("fullscreen-btn").addEventListener("click", function() {
-  // Request fullscreen
-  if (document.documentElement.requestFullscreen) {
-    document.documentElement.requestFullscreen();
-  } else if (document.documentElement.mozRequestFullScreen) { // Firefox
-    document.documentElement.mozRequestFullScreen();
-  } else if (document.documentElement.webkitRequestFullscreen) { // Chrome, Safari and Opera
-    document.documentElement.webkitRequestFullscreen();
-  } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
-    document.documentElement.msRequestFullscreen();
-  }
-
-  // Hide the button and show the container
+document.addEventListener("DOMContentLoaded", function() {
+  var fullscreenBtn = document.querySelector('.fullscreen-btn');
+  var elem = document.documentElement; // Get the root element (usually <html>)
+  
+  fullscreenBtn.addEventListener('click', function() {
+    // Check if Fullscreen API is supported by the browser
+    if (elem.requestFullscreen) {
+      elem.requestFullscreen(); // Request fullscreen
+    } else if (elem.mozRequestFullScreen) { // For Firefox
+      elem.mozRequestFullScreen();
+    } else if (elem.webkitRequestFullscreen) { // For Chrome, Safari and Opera
+      elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) { // For IE/Edge
+      elem.msRequestFullscreen();
+    }
+  });
+   // Hide the button and show the container
   document.getElementById("fullscreen-btn").style.display = "none";
   document.querySelector(".container").style.display = "block";
 
