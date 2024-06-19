@@ -1,4 +1,3 @@
-alert("ِClick OK then press F11 in the KEYBOARD !!")
 
 
 
@@ -16,6 +15,9 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.style.height = '100%'; // Ensure body covers full viewport height
   }
 });
+
+
+alert("ِClick OK then press F11 in the KEYBOARD !!")
 
 let audio = document.getElementById('myaudio');
 audio.play()
