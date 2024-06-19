@@ -1,27 +1,3 @@
-document.addEventListener("DOMContentLoaded", function() {
-  var fullscreenBtn = document.querySelector('.fullscreen-btn');
-  var elem = document.documentElement; // Get the root element (usually <html>)
-  
-  fullscreenBtn.addEventListener('click', function() {
-    // Check if Fullscreen API is supported by the browser
-    if (elem.requestFullscreen) {
-      elem.requestFullscreen(); // Request fullscreen
-    } else if (elem.mozRequestFullScreen) { // For Firefox
-      elem.mozRequestFullScreen();
-    } else if (elem.webkitRequestFullscreen) { // For Chrome, Safari and Opera
-      elem.webkitRequestFullscreen();
-    } else if (elem.msRequestFullscreen) { // For IE/Edge
-      elem.msRequestFullscreen();
-    }
-  });
-   // Hide the button and show the container
-  document.getElementById("fullscreen-btn").style.display = "none";
-  document.querySelector(".container").style.display = "block";
-
-  // Fetch data and start the animation
-  fetchData();
-});
-
 
 // Import the data to customize and insert them into page
 const fetchData = () => {
