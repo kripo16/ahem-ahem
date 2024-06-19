@@ -12,7 +12,18 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.style.backgroundPosition = 'center';
     document.body.style.backgroundRepeat = 'no-repeat';
     document.body.style.height = '100%'; // Ensure body covers full viewport height
+    var container = document.querySelector('.container');
+    if (container) {
+      container.style.display = 'none';
+    }
+  } else {
+    // Target date, show content
+    var container = document.querySelector('.container');
+    if (container) {
+      container.style.display = 'block';
+    }
   }
+  
 });
 
 let audio = document.getElementById('myaudio');
