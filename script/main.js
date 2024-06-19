@@ -12,8 +12,6 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.style.backgroundImage = 'url("img/bg.png")'; // Replace with your image URL
     document.body.style.backgroundSize = 'cover';
     document.body.style.backgroundPosition = 'center';
-    document.body.style.backgroundColor = '#f0f0f0'; // Fallback background color
-    document.body.innerHTML = '<div class="message"><h1>Not Too Early!</h1><p>Check back on June 20, 2024.</p></div>';
   }
 });
 
