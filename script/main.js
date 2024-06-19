@@ -9,9 +9,11 @@ document.addEventListener('DOMContentLoaded', function() {
   // Check if the current date is the target date
   if (currentDate.toDateString() !== targetDate.toDateString()) {
     // Not the target date, change background or display a message
-    document.body.style.backgroundImage = 'url("img/bg.png")'; // Replace with your image URL
+    document.body.style.backgroundImage = 'url("bg.png")'; // Replace with your image URL
     document.body.style.backgroundSize = 'cover';
     document.body.style.backgroundPosition = 'center';
+    document.body.style.backgroundRepeat = 'no-repeat';
+    document.body.style.height = '100%'; // Ensure body covers full viewport height
   }
 });
 
