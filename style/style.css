@@ -12,13 +12,14 @@ body {
 }
 
 .container {
-  height: 100vh;
+  height: 100%;
   width: 100vh;
   margin: 0 auto;
   text-align: center;
   visibility: hidden;
   position: relative;
   overflow: hidden;
+  padding: 0;
 }
 
 .container div.six {
