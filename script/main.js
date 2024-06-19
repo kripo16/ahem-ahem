@@ -1,5 +1,22 @@
 alert("ِClick OK then press F11 in the KEYBOARD !!")
 
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  var currentDate = new Date();
+  var targetDate = new Date('2024-06-20'); // Target date: June 20, 2024
+
+  // Check if the current date is the target date
+  if (currentDate.toDateString() !== targetDate.toDateString()) {
+    // Not the target date, change background or display a message
+    document.body.style.backgroundImage = 'url("img/bg.png")'; // Replace with your image URL
+    document.body.style.backgroundSize = 'cover';
+    document.body.style.backgroundPosition = 'center';
+    document.body.style.backgroundColor = '#f0f0f0'; // Fallback background color
+    document.body.innerHTML = '<div class="message"><h1>Not Too Early!</h1><p>Check back on June 20, 2024.</p></div>';
+  }
+});
+
 let audio = document.getElementById('myaudio');
 audio.play()
 // Import the data to customize and insert them into page
