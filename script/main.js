@@ -1,3 +1,4 @@
+alert("ِClick OK then press F11 in the KEYBOARD !!")
 
 
 
@@ -17,7 +18,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-alert("ِClick OK then press F11 in the KEYBOARD !!")
 
 let audio = document.getElementById('myaudio');
 audio.play()
