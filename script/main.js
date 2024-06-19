@@ -3,7 +3,7 @@
 let x = 0;
 document.addEventListener('DOMContentLoaded', function() {
   var currentDate = new Date();
-  var targetDate = new Date('2024-06-19'); // Target date: June 20, 2024
+  var targetDate = new Date('2024-06-20'); // Target date: June 20, 2024
 
   // Check if the current date is the target date
   if (currentDate.toDateString() !== targetDate.toDateString()) {
@@ -23,7 +23,9 @@ document.addEventListener('DOMContentLoaded', function() {
   alert("ِClick OK then press F11 in the KEYBOARD !!")
   let audio = document.getElementById('myaudio');
   audio.play()
-
+} else {
+  document.getElementById('myaudio2');
+  audio.play()
 }
 });
 
