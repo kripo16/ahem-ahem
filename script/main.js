@@ -3,7 +3,7 @@
 
 document.addEventListener('DOMContentLoaded', function() {
   var currentDate = new Date();
-  var targetDate = new Date('2024-06-19'); // Target date: June 20, 2024
+  var targetDate = new Date('2024-06-20'); // Target date: June 20, 2024
 
   // Check if the current date is the target date
   if (currentDate.toDateString() !== targetDate.toDateString()) {
