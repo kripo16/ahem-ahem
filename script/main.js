@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
   let audio = document.getElementById('myaudio');
   audio.play()
 } else {
-  document.getElementById('myaudio2');
+  let audio = document.getElementById('myaudio2');
   audio.play()
 }
 });
