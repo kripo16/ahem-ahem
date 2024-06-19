@@ -1,4 +1,7 @@
 alert("ِClick OK then press F11 in the KEYBOARD !!")
+
+let audio = document.getElementById('myaudio');
+audio.play()
 // Import the data to customize and insert them into page
 const fetchData = () => {
   fetch("customize.json")
