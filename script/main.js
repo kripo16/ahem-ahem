@@ -2,23 +2,9 @@
 
 let x = 0;
 document.addEventListener('DOMContentLoaded', function() {
-  var currentDate = new Date();
-  var targetDate = new Date('2024-06-20'); // Target date: June 20, 2024
+  
 
-  // Check if the current date is the target date
-  if (currentDate.toDateString() !== targetDate.toDateString()) {
-    // Not the target date, change background or display a message
-    document.body.style.backgroundImage = 'url("img/bg.png")'; // Replace with your image URL
-    document.body.style.backgroundSize = 'cover';
-    document.body.style.backgroundPosition = 'center';
-    document.body.style.backgroundRepeat = 'no-repeat';
-    document.body.style.height = '100%'; // Ensure body covers full viewport height
-    const container = document.querySelector('.container');
-    container.style.display = 'none'; // Or 'flex' if it's a flexbox container
-    x = 1;
-
-    return;
-  }
+  
   if (x===0) {
   alert("ِClick OK then press F11 in the KEYBOARD !!")
   let audio = document.getElementById('myaudio');
